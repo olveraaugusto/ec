@@ -128,7 +128,7 @@ html, body {
   width: 24%;
   top: 48%;
   left: -6%;
-  transform: rotate(-12deg);
+  transform: rotate(12deg);
   animation-delay: -3.1s;
   animation-duration: 4.4s;
 }
