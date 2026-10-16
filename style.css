@@ -93,27 +93,27 @@ html, body {
   animation-duration: 4.2s;
 }
 
-/* 2. Arriba centro-derecha — grande */
+/* 2. Arriba centro-derecha — grande (ROTADO MÁS) */
 .r2 {
   width: 32%;
   top: 2%;
   left: 52%;
-  transform: rotate(5deg);
+  transform: rotate(15deg);
   animation-delay: -1.1s;
   animation-duration: 5.1s;
 }
 
-/* 3. Centro izquierda (junto al título) */
+/* 3. Centro izquierda (junto al título) — ROTADO */
 .r3 {
   width: 26%;
   top: 22%;
   left: -6%;
-  transform: rotate(0deg);
+  transform: rotate(-15deg);
   animation-delay: -2.3s;
   animation-duration: 3.8s;
 }
 
-/* 4. Centro derecha (junto al título, rotado) */
+/* 4. Centro derecha (junto al título) */
 .r4 {
   width: 28%;
   top: 22%;
@@ -123,17 +123,17 @@ html, body {
   animation-duration: 4.7s;
 }
 
-/* 5. Centro-abajo izquierda (junto a "22 octubre") */
+/* 5. Centro-abajo izquierda — ROTADO */
 .r5 {
   width: 24%;
   top: 48%;
   left: -6%;
-  transform: rotate(0deg);
+  transform: rotate(-12deg);
   animation-delay: -3.1s;
   animation-duration: 4.4s;
 }
 
-/* 6. Centro-abajo derecha (junto a "SALON JARDIN") */
+/* 6. Centro-abajo derecha */
 .r6 {
   width: 26%;
   top: 50%;
@@ -143,22 +143,22 @@ html, body {
   animation-duration: 5.3s;
 }
 
-/* 7. Abajo centro */
+/* 7. Abajo centro-izquierda — CENTRADO */
 .r7 {
   width: 28%;
-  top: 80%;
-  left: 38%;
-  transform: rotate(-8deg) scaleX(-1);
+  top: 82%;
+  left: 12%;
+  transform: rotate(0deg) scaleX(-1);
   animation-delay: -0.4s;
   animation-duration: 3.9s;
 }
 
-/* 8. Abajo izquierda — grande */
+/* 8. Abajo centro-derecha — CENTRADO */
 .r8 {
   width: 28%;
   top: 82%;
-  left: -6%;
-  transform: rotate(5deg);
+  left: 48%;
+  transform: rotate(0deg);
   animation-delay: -2.6s;
   animation-duration: 4.9s;
 }
@@ -272,10 +272,10 @@ html, body {
 
 .pin {
   position: absolute;
-  right: -3.2vh;
+  right: -4.5vh;
   top: 50%;
   transform: translateY(-50%);
-  height: 3vh;
+  height: 4.5vh;
   width: auto;
 }
 
