@@ -6,44 +6,51 @@
   <title>Invitación Halloween 🎃</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Special+Elite&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Special+Elite&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Capa de fantasmas de fondo -->
-  <div class="fantasmas" aria-hidden="true">
-    <img src="fantasma.png" class="fantasma f1" alt="">
-    <img src="fantasma.png" class="fantasma f2" alt="">
-    <img src="fantasma.png" class="fantasma f3" alt="">
-    <img src="fantasma.png" class="fantasma f4" alt="">
-    <img src="fantasma.png" class="fantasma f5" alt="">
-    <img src="fantasma.png" class="fantasma f6" alt="">
-    <img src="fantasma.png" class="fantasma f7" alt="">
-    <img src="fantasma.png" class="fantasma f8" alt="">
-  </div>
+  <div class="poster">
 
-  <!-- Contenido principal -->
-  <main class="invitacion">
-
-    <h1 class="titulo">Halloween</h1>
-    <p class="fecha">22 octubre</p>
-
-    <p class="concurso">¡habrá concurso de disfraces!</p>
-
-    <div class="pie">
-      <div class="bloque">
-        <span class="label">entrada:</span>
-        <span class="valor">7:30 pm</span>
-      </div>
-      <div class="bloque">
-        <a class="lugar" href="https://maps.app.goo.gl/LikHRfA6CaoC6shJ7" target="_blank" rel="noopener nofollow">
-          Salon Jardin<br>Angelopolis
-        </a>
-      </div>
+    <!-- Fantasmas de fondo -->
+    <div class="fantasmas" aria-hidden="true">
+      <img src="fantasma.png" class="fantasma f1" alt="">
+      <img src="fantasma.png" class="fantasma f2" alt="">
+      <img src="fantasma.png" class="fantasma f3" alt="">
+      <img src="fantasma.png" class="fantasma f4" alt="">
+      <img src="fantasma.png" class="fantasma f5" alt="">
+      <img src="fantasma.png" class="fantasma f6" alt="">
+      <img src="fantasma.png" class="fantasma f7" alt="">
+      <img src="fantasma.png" class="fantasma f8" alt="">
     </div>
 
-  </main>
+    <!-- Contenido -->
+    <main class="contenido">
+
+      <h1 class="titulo">Halloween</h1>
+      <p class="concurso">¡habrá concurso de<br>disfraces!</p>
+
+      <h2 class="fecha">22 octubre</h2>
+
+      <div class="info">
+        <div class="bloque">
+          <span class="label">ENTRADA:</span>
+          <span class="valor">7:30 PM</span>
+        </div>
+        <div class="separador"></div>
+        <div class="bloque">
+          <a class="lugar" href="https://maps.app.goo.gl/LikHRfA6CaoC6shJ7" target="_blank" rel="noopener nofollow">
+            <span>SALON JARDIN</span>
+            <span>ANGELOPOLIS</span>
+          </a>
+          <img src="maps.png" class="pin" alt="Ubicación" onerror="this.style.display='none'">
+        </div>
+      </div>
+
+    </main>
+
+  </div>
 
 </body>
 </html>
