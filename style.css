@@ -1,8 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 html, body {
   height: 100%;
@@ -11,7 +7,7 @@ html, body {
   overflow: hidden;
 }
 
-/* ===== ESCENARIO (fondo negro alrededor) ===== */
+/* ===== ESCENARIO ===== */
 .escenario {
   width: 100vw;
   height: 100vh;
@@ -21,7 +17,7 @@ html, body {
   background: #000;
 }
 
-/* ===== PÓSTER (contenedor con proporción 9:16) ===== */
+/* ===== PÓSTER ===== */
 .poster {
   position: relative;
   height: 100vh;
@@ -52,17 +48,39 @@ html, body {
   user-select: none;
   -webkit-user-drag: none;
   filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+  /* Animación base: flotación vertical */
+  animation: flotar 4s ease-in-out infinite;
+  will-change: transform;
 }
 
-/* Posiciones en % del póster (esto es lo que faltaba) */
-.f1 { width: 32%; top: -4%;  left: 4%;   transform: rotate(10deg); }
-.f2 { width: 36%; top: -6%;  left: 52%;  transform: rotate(-14deg) scaleX(-1); }
-.f3 { width: 30%; top: 12%;  left: -10%; transform: rotate(-6deg); }
-.f4 { width: 34%; top: 20%;  left: 76%;  transform: rotate(12deg); }
-.f5 { width: 30%; top: 52%;  left: -12%; transform: rotate(4deg) scaleX(-1); }
-.f6 { width: 32%; top: 76%;  left: 76%;  transform: rotate(-10deg); }
-.f7 { width: 40%; top: 84%;  left: -10%; transform: rotate(6deg); }
-.f8 { width: 30%; top: 90%;  left: 40%;  transform: rotate(-15deg) scaleX(-1); }
+/* Cada fantasma tiene su posición + su animación propia */
+.f1 { width: 30%; top: -3%; left: 4%;   animation-delay: 0s;    animation-duration: 4.2s; }
+.f2 { width: 32%; top: -4%; left: 55%;  animation-delay: -1.1s; animation-duration: 5.1s; }
+.f3 { width: 28%; top: 12%; left: -8%;  animation-delay: -2.3s; animation-duration: 3.8s; }
+.f4 { width: 30%; top: 20%; left: 76%;  animation-delay: -0.7s; animation-duration: 4.7s; }
+.f5 { width: 28%; top: 52%; left: -10%; animation-delay: -3.1s; animation-duration: 4.4s; }
+.f6 { width: 30%; top: 76%; left: 76%;  animation-delay: -1.8s; animation-duration: 5.3s; }
+.f7 { width: 36%; top: 84%; left: -8%;  animation-delay: -0.4s; animation-duration: 3.9s; }
+.f8 { width: 28%; top: 90%; left: 40%;  animation-delay: -2.6s; animation-duration: 4.9s; }
+
+/* Flotación: sube/baja + ligero balanceo lateral + rotación sutil */
+@keyframes flotar {
+  0%   { transform: translate(0, 0)      rotate(0deg); }
+  25%  { transform: translate(6px, -10px) rotate(3deg); }
+  50%  { transform: translate(0, -18px)  rotate(0deg); }
+  75%  { transform: translate(-6px, -10px) rotate(-3deg); }
+  100% { transform: translate(0, 0)      rotate(0deg); }
+}
+
+/* Mantener la rotación base de cada fantasma encima de la animación */
+.f1 { --base-rot: 8deg; }
+.f2 { --base-rot: -14deg; }
+.f3 { --base-rot: -6deg; }
+.f4 { --base-rot: 12deg; }
+.f5 { --base-rot: 4deg; }
+.f6 { --base-rot: -10deg; }
+.f7 { --base-rot: 6deg; }
+.f8 { --base-rot: -15deg; }
 
 /* ===== CONTENIDO ===== */
 .contenido {
@@ -73,52 +91,60 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 6% 8%;
+  padding: 6% 6%;
   text-align: center;
 }
 
-/* HALLOWEEN */
+/* HALLOWEEN — ahora más chico y con stroke para más peso */
 .titulo {
-  font-family: 'Nosifer', cursive;
-  font-size: 13vh;
-  line-height: 1.1;
+  font-family: 'Creepster', cursive;
+  font-size: 12vh;            /* antes 15vh → se salía */
+  line-height: 1;
   color: #e08c59;
-  letter-spacing: 2px;
-  text-shadow: 0 0 30px rgba(224, 140, 89, 0.45);
+  letter-spacing: 3px;
+  -webkit-text-stroke: 2px #e08c59;
+  text-shadow:
+    0 0 20px rgba(224, 140, 89, 0.6),
+    0 0 40px rgba(224, 140, 89, 0.3);
   transform: rotate(-2deg);
   margin-bottom: 3vh;
+  white-space: nowrap;
 }
 
 /* ¡habrá concurso de disfraces! */
 .concurso {
   font-family: 'Special Elite', monospace;
-  font-size: 2.1vh;
+  font-size: 2vh;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #fff;
   line-height: 1.5;
   text-shadow: 1px 1px 0 #000;
-  margin-bottom: 8vh;
+  margin-bottom: 9vh;
 }
 
-/* 22 octubre */
+/* 22 octubre — antes 7.5vh → se salía */
 .fecha {
-  font-family: 'Nosifer', cursive;
-  font-size: 6.5vh;
-  line-height: 1.1;
+  font-family: 'Creepster', cursive;
+  font-size: 6vh;
+  line-height: 1;
   color: #e08c59;
-  letter-spacing: 2px;
-  text-shadow: 0 0 20px rgba(224, 140, 89, 0.35);
+  letter-spacing: 3px;
+  -webkit-text-stroke: 1.5px #e08c59;
+  text-shadow:
+    0 0 16px rgba(224, 140, 89, 0.5),
+    0 0 32px rgba(224, 140, 89, 0.25);
   margin-bottom: 6vh;
+  white-space: nowrap;
 }
 
-/* Bloque entrada + dirección */
+/* ===== INFO ===== */
 .info {
   display: flex;
   align-items: center;
   gap: 3vw;
   font-family: 'Special Elite', monospace;
-  font-size: 2.1vh;
+  font-size: 2vh;
   color: #fff;
   text-shadow: 1px 1px 0 #000;
 }
@@ -132,9 +158,7 @@ html, body {
   line-height: 1.2;
 }
 
-.bloque-lugar {
-  position: relative;
-}
+.bloque-lugar { position: relative; }
 
 .separador {
   width: 2px;
@@ -152,10 +176,7 @@ html, body {
   text-align: left;
   transition: color 0.2s;
 }
-
-.lugar:hover {
-  color: #e08c59;
-}
+.lugar:hover { color: #e08c59; }
 
 .pin {
   position: absolute;
@@ -166,9 +187,8 @@ html, body {
   width: auto;
 }
 
-/* ===== RESPONSIVE: en celular el póster ocupa todo ===== */
+/* ===== RESPONSIVE ===== */
 @media (max-aspect-ratio: 9/16) {
-  /* Pantalla más alta que 9:16 → el póster ocupa todo el ancho */
   .poster {
     width: 100vw;
     height: auto;
